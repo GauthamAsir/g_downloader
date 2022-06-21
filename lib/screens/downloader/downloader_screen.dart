@@ -8,7 +8,6 @@ import 'package:flutter/services.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -516,26 +515,6 @@ class _DownloaderScreenState extends State<DownloaderScreen> {
                     getVideoQuality();
                   },
                   child: const Text('Download')),
-              const SizedBox(
-                height: 20,
-              ),
-
-              ElevatedButton(
-                  onPressed: () async {
-
-                    String url = 'https://t.me/mellow04';
-
-                    try {
-                      await launchUrl(Uri(
-                          path: 't.me/mellow04',
-                          scheme: 'https'
-                      ), mode: LaunchMode.externalNonBrowserApplication);
-                    }catch (e) {
-                      log(e.toString());
-                    }
-                  },
-                  child: const Text('Contact Gautham')),
-
             ],
           ),
         ),
